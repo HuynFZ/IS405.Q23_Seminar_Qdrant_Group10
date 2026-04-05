@@ -87,12 +87,14 @@ if query_text:
         st.header("2️⃣ Hệ thống Mới (Qdrant)")
         st.code("model.encode(query) -> qdrant.query_points()")
         
-        query_vector = embed_model.encode(query_text, normalize_embeddings=True).tolist()
-        search_results = qdrant_client.query_points(
-            collection_name=collection_name,
-            query=query_vector,
-            limit=3
-        ).points
+        # Thêm hiệu ứng Loading cho AI và Qdrant
+        with st.spinner("🧠 AI đang mã hóa Vector & Qdrant đang tính toán độ tương đồng..."):
+            query_vector = embed_model.encode(query_text, normalize_embeddings=True).tolist()
+            search_results = qdrant_client.query_points(
+                collection_name=collection_name,
+                query=query_vector,
+                limit=3
+            ).points
         
         if search_results:
             st.success(f"Tìm thấy top {len(search_results)} sản phẩm có độ tương đồng ngữ nghĩa cao nhất!")
