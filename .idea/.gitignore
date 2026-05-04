@@ -6,3 +6,16 @@
 # Datasource local storage ignored files
 /dataSources/
 /dataSources.local.xml
+
+# Môi trường ảo (Rất nặng, gây lỗi khi deploy)
+Data_Analytics/venv/
+__pycache__/
+
+# File chứa thông tin bảo mật (API keys, passwords,...)
+Data_Analytics/.streamlit/secrets.toml
+
+# Dữ liệu của database Qdrant (Không version control dữ liệu state)
+Qdrant_Server/qdrant_storage/
+
+# Cấu hình riêng của IDE (PyCharm/IntelliJ)
+.idea/
