@@ -109,7 +109,7 @@ if query_text:
                 with col_img:
                     img_url = hit.payload.get('image_url', None)
                     if img_url:
-                        st.image(img_url, use_container_width=True)
+                        st.image(img_url, width="stretch")
                     else:
                         st.info("Không có hình ảnh")
                         
