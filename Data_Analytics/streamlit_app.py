@@ -14,11 +14,23 @@ st.title("🛍️ H&M: Spark SQL vs Qdrant Semantic Search")
 @st.cache_resource
 def load_systems():
     # Khai báo token Hugging Face (Nên lấy từ file secrets để bảo mật)
-    # Nếu không muốn dùng secrets, bạn có thể gán trực tiếp: hf_token = "hf_MãTokenCủaBạn..."
     hf_token = st.secrets["HF_TOKEN"] if "HF_TOKEN" in st.secrets else None
     
     # Khởi tạo Qdrant & AI Model (Đã thêm tham số token)
+    
+    
+    # Lấy thông tin từ secrets
+    #qdrant_url = st.secrets["QDRANT_URL"]
+    #qdrant_key = st.secrets["QDRANT_API_KEY"]
+    
+    # Khởi tạo kết nối lên Qdrant Cloud
+    #qclient = QdrantClient(
+    #    url=qdrant_url, 
+    #    api_key=qdrant_key
+    #)
+    
     qclient = QdrantClient(url="http://localhost:6333") 
+    
     model = SentenceTransformer('BAAI/bge-small-en-v1.5', token=hf_token) 
     
     # Khởi tạo Spark (Ultra-Safe Mode)
@@ -80,7 +92,7 @@ if query_text:
             st.caption("Lý do: SQL truyền thống chỉ tìm khớp chuỗi ký tự chính xác. Không có sản phẩm nào miêu tả đúng dòng chữ này.")
         else:
             st.success(f"Tìm thấy {count} kết quả chứa từ khóa.")
-            st.dataframe(spark_result.toPandas().head(3))
+            st.dataframe(spark_result.toPandas().head(10))
 
     # ---------------- BÊN PHẢI: QDRANT ----------------
     with col_qdrant:
