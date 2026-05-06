@@ -130,6 +130,6 @@ if query_text:
                     st.write(f"**Danh mục:** {hit.payload.get('department_name', 'N/A')}")
                     # Giới hạn mô tả ở 150 ký tự đầu tiên để tránh giao diện quá dài
                     desc = hit.payload.get('description', 'Không có mô tả')
-                    st.write(f"> _{desc[:150]}..._")
+                    st.write(f"> _{desc[:600]}..._")
                     
                 st.divider()
