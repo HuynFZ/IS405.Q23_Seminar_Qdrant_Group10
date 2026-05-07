@@ -1,0 +1,14 @@
+# Bỏ qua thư mục môi trường ảo
+Data_Analytics/venv/
+venv/
+
+# Bỏ qua file chứa Token bảo mật
+Data_Analytics/.streamlit/secrets.toml
+.streamlit/secrets.toml
+
+# Bỏ qua dữ liệu database cục bộ của Qdrant (rất nặng)
+Qdrant_Server/qdrant_storage/
+
+# Bỏ qua các file rác của Python
+__pycache__/
+*.pyc
