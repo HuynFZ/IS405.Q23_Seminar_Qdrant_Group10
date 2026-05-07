@@ -1,4 +1,4 @@
-# 🚀 QDRANT VECTOR DATABASE - SEMINAR NHÓM 10
+# 🚀 QDRANT VECTOR DATABASE - SEMINAR NHÓM 9
 **Môn học:** Dữ liệu lớn (Big Data) | **Mã lớp:** IS405.Q23  
 **Chủ đề:** Nghiên cứu và triển khai Qdrant trong hệ sinh thái Apache Spark.
 
@@ -63,4 +63,4 @@ Khi viết mã nguồn Spark ETL để đẩy dữ liệu, lưu ý cấu hình E
 * **HNSW (Hierarchical Navigable Small World):** Thuật toán lập chỉ mục giúp tìm kiếm lân cận gần nhất với tốc độ cực nhanh trên tập dữ liệu lớn (>10.000 sản phẩm).
 * **Volume Mapping (-v):** Ánh xạ dữ liệu từ Container vào thư mục máy thật (qdrant_storage), giúp dữ liệu bền vững ngay cả khi xóa/tạo lại Container.
 
-© 2026 Nhóm 10 - Khoa Hệ thống Thông tin - UIT Người thực hiện: Nguyễn Văn Mạnh Huy (Leader)
+© 2026 Nhóm 9 - Khoa Hệ thống Thông tin - UIT Người thực hiện: Nguyễn Văn Mạnh Huy (Leader)
